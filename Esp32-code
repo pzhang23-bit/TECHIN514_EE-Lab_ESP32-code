@@ -1,0 +1,14 @@
+int analogPin = 2;      // pin
+int rawValue = 0;       // ADC 
+float voltage = 0;      // transfer v
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  rawValue = analogRead(analogPin);               // read
+  voltage = (rawValue / 4095.0) * 3.3;           // votlage-trans
+  Serial.println(voltage);                        // output v
+  delay(500);
+}
